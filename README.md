@@ -27,6 +27,7 @@ autoinstall:
   * Primary IDE Device 0: Your VDI hard disk
   * Primary IDE Device 1: Your Ubuntu Live CD
   * Secondary IDE Device 0: Your seed.iso
+![IDE Controller settings](Preeseed%20ISO%20Test%20Clone%20-%20Settings_893.png)
 * Save and run.  You will only have to type `yes` to confirm
 * It should boot off the Live CD, and use the seed.iso stuff to populate, and then you will have a piping hot fresh server in a few minutes
 * Hit Enter to get to the prompt, the hashed example above password (from their docs) is "ubuntu"
