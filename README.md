@@ -34,6 +34,35 @@ I hate bad documentation, but I figured this out.  I was using debian preseeding
 * Hit Enter to get to the prompt, the hashed example above password (from their docs) is "ubuntu"
 ![IDE Controller settings](Preeseed%20ISO%20Test%20Clone%20%5BRunning%5D%20-%20Oracle%20VM%20VirtualBox_895.png)
 
+## Ubuntu Autoinstall on VMWare 6.x
+
+* Download a "Ubuntu Server Live" ISO from either 20.04 (old and busted, which I heartly recommend for a long term server) or 21.04 (new hotness) to your favorite connected datastore
+* On an Ubuntu box, intsall the cloud image utilities `apt install cloud-image-utils`
+* Make a directory to keep things clean. In the example they give you, it was `~/cidata` so let's keep that to keep things simple
+* Create two files in that directory: `user-data` and `meta-data`
+* The file `user-data` should have, at minimum, this config:
+
+      #cloud-config
+      autoinstall:
+        version: 1
+        identity:
+        hostname: ubuntu-server
+        password: "$6$exDY1mhS4KUYCE/2$zmn9ToZwTKLhCw.b4/b.ZRTIZM30JZ4QrOQ2aOXJ8yk96xpcCof0kxKwuX1kqLG/ygbJ1f8wxED22bTL4F46P0"
+        username: ubuntu
+
+* The file `meta-data` can be empty for now
+* Run `cloud-localds ~/seed.iso user-data meta-data` This will create `~/seed.iso` for this example.
+* Launch VMWare server (I used ESXi because I am cheap, this probably also works with vSphere)
+* Create an instance for Ubuntu, use a hard disk however you like
+* In the stage where you add hardware, "Customize Settings," you're going to have to have **two** CD-ROMS
+* CD/DVD Drive 1: Your "Ubuntu Server Live" ISO
+* CD/DVD Drive 2: Your seed.iso
+![IDE Controller settings](vmware-customize-settings.png)
+* Start the instance
+* Save and run.  You will only have to type `yes` to confirm
+* It should boot off the Live CD, and use the seed.iso stuff to populate, and then you will have a piping hot fresh server in a few minutes
+* Hit Enter to get to the prompt, the hashed example above password (from their docs) is "ubuntu"
+
 Sources: 
 * Ubuntu Autoinstall Docs https://ubuntu.com/server/docs/install/autoinstall
 * Ubuntu Autoinstall https://ubuntu.com/server/docs/install/autoinstall-quickstart
@@ -42,6 +71,5 @@ Sources:
 * Curtin Config documents https://curtin.readthedocs.io/en/latest/topics/config.html
 
 Todo
-- How to stop typing "yes"
-- Extra settings
-- How to do it in VMWare
+- How to stop typing "yes" - spinning your own isolinux menu options on a CD
+- Doing this with a PXE server
