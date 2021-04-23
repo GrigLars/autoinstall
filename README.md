@@ -9,15 +9,15 @@ I hate bad documentation, but I figured this out.  I was using debian preseeding
 * Make a directory to keep things clean. In the example they give you, it was `~/cidata` so let's keep that to keep things simple
 * Create two files in that directory: `user-data` and `meta-data`
 * The file `user-data` should have, at minimum, this config:
-`
-#cloud-config
-autoinstall:
-  version: 1
-  identity:
-    hostname: ubuntu-server
-    password: "$6$exDY1mhS4KUYCE/2$zmn9ToZwTKLhCw.b4/b.ZRTIZM30JZ4QrOQ2aOXJ8yk96xpcCof0kxKwuX1kqLG/ygbJ1f8wxED22bTL4F46P0"
-    username: ubuntu
-`
+
+      #cloud-config
+      autoinstall:
+        version: 1
+        identity:
+        hostname: ubuntu-server
+        password: "$6$exDY1mhS4KUYCE/2$zmn9ToZwTKLhCw.b4/b.ZRTIZM30JZ4QrOQ2aOXJ8yk96xpcCof0kxKwuX1kqLG/ygbJ1f8wxED22bTL4F46P0"
+        username: ubuntu
+
 * The file `meta-data` can be empty for now
 * Run `cloud-localds ~/seed.iso user-data meta-data` This will create `~/seed.iso` for this example.
 * Launch VirtualBox
