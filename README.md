@@ -74,6 +74,7 @@ Sources:
 * Subiquity GitHub https://github.com/canonical/subiquity
 * Curtin GitHub https://github.com/canonical/curtin
 * Curtin Config documents https://curtin.readthedocs.io/en/latest/topics/config.html
+* NoCloud https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html
 
 Todo
 - How to stop typing "yes" - spinning your own isolinux menu options on a CD
