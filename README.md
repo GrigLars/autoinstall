@@ -2,7 +2,7 @@
 
 I hate bad documentation, but I figured this out.  I was using debian preseeding (d-i) for the longest time, but "they" decided to do away with it, and I was forced to adapt.  The documention is kind of scant.  I tried their converter, "autoinstall-generator," but it wouldn't work on my preseeds. Maybe they fixed it by the time you read this.  I will add to these as I see fit.  At the time of writing, this was for Ubuntu Focal Fossa (20.04) and Hirsute Hippo (21.04). It nmight also work on similarly aged Debian distros.  Who knows? 
 
-The original documentation assumes that you have Linux KVM (the virtual machine service, not a keyboard-video-mouse crash cart) installed.  I wanted some step-by-step" instructions for those who want to try it on Oracle's VirtualBox and VMWare.
+The original documentation assumes that you have Linux KVM installed (the virtual machine service, not a keyboard-video-mouse crash cart).  I wanted some "step-by-step" instructions for those who want to try it on Oracle's VirtualBox and VMWare.
 
 ## Ubuntu Autoinstall on Oracle VirtualBox
 
@@ -21,6 +21,7 @@ The original documentation assumes that you have Linux KVM (the virtual machine 
         username: ubuntu
 
 * The file `meta-data` can be empty for now
+* I have a more complete `user-data` in this repo that at least installs openssh-server, open-vm-tools, and python3 (for further ansible configurations)
 * Run `cloud-localds ~/seed.iso user-data meta-data` This will create `~/seed.iso` for this example.
 * Launch VirtualBox
 * Create an instance for Ubuntu, use a VDI hard disk however you like
@@ -53,6 +54,7 @@ The original documentation assumes that you have Linux KVM (the virtual machine 
         username: ubuntu
 
 * The file `meta-data` can be empty for now
+* I have a more complete `user-data` in this repo that at least installs openssh-server, open-vm-tools, and python3 (for further ansible configurations)
 * Run `cloud-localds ~/seed.iso user-data meta-data` This will create `~/seed.iso` for this example.
 * Copy the `~/seed.iso` to your favorite datastore
 * Launch VMWare server (I used ESXi because I am cheap, this probably also works with vSphere)
