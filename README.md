@@ -76,6 +76,13 @@ Sources:
 * Curtin Config documents https://curtin.readthedocs.io/en/latest/topics/config.html
 * NoCloud https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html
 
+Alternatives and further study:
+* Fully Automatic Installer (FAI) https://fai-project.org/
+* Debian Preseed https://wiki.debian.org/DebianInstaller/Preseed
+* Debian's notes on editing an ISO https://wiki.debian.org/DebianInstaller/Preseed/EditIso
+* Syslinux (used to boot from floppies, CD/DVD, or USB) https://wiki.syslinux.org/wiki/index.php?title=The_Syslinux_Project
+* Kickstart installations (RedHat/CentOS) https://docs.centos.org/en-US/centos/install-guide/Kickstart2/
+
 Todo
 - How to stop typing "yes" - spinning your own isolinux menu options on a CD
 - Use with vagrant or VBoxManage
