@@ -1,8 +1,10 @@
 # How to run Ubuntu Autoinstall Provisioning on Various VMs
 
-I hate bad documentation, but I figured this out.  I was using debian preseeding (d-i) for the longest time, but "they" decided to do away with it, and I was forced to adapt.  The documention is kind of scant.  I tried their converter, "autoinstall-generator," but it wouldn't work on my preseeds. Maybe they fixed it by the time you read this.  
+I hate bad documentation, but I figured this out.  I was using debian preseeding (d-i) for the longest time, but "they" decided to do away with it, and I was forced to adapt.  The documention is kind of scant.  I tried their converter, "autoinstall-generator," but it wouldn't work on my preseeds. Maybe they fixed it by the time you read this.  I will add to these as I see fit.  At the time of writing, this was for Ubuntu Focal Fossa (20.04) and Hirsute Hippo (21.04). It nmight also work on similarly aged Debian distros.  Who knows? 
 
-## Ubuntu Autoinstall on Virtualbox
+The original documentation assumes that you have Linux KVM (the virtual machine service, not a keyboard-video-mouse crash cart) installed.  I wanted some step-by-step" instructions for those who want to try it on Oracle's VirtualBox and VMWare.
+
+## Ubuntu Autoinstall on Oracle VirtualBox
 
 * Download a "Ubuntu Server Live" ISO from either 20.04 (old and busted, which I heartly recommend for a long term server) or 21.04 (new hotness)
 * On an Ubuntu box, intsall the cloud image utilities `apt install cloud-image-utils`
@@ -73,4 +75,5 @@ Sources:
 
 Todo
 - How to stop typing "yes" - spinning your own isolinux menu options on a CD
+- Use with vagrant or VBoxManage
 - Doing this with a PXE server
