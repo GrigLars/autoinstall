@@ -52,11 +52,12 @@ I hate bad documentation, but I figured this out.  I was using debian preseeding
 
 * The file `meta-data` can be empty for now
 * Run `cloud-localds ~/seed.iso user-data meta-data` This will create `~/seed.iso` for this example.
+* Copy the `~/seed.iso` to your favorite datastore
 * Launch VMWare server (I used ESXi because I am cheap, this probably also works with vSphere)
 * Create an instance for Ubuntu, use a hard disk however you like
 * In the stage where you add hardware, "Customize Settings," you're going to have to have **two** CD-ROMS
-* CD/DVD Drive 1: Your "Ubuntu Server Live" ISO
-* CD/DVD Drive 2: Your seed.iso
+* CD/DVD Drive 1: Your "Ubuntu Server Live" ISO from your datastore
+* CD/DVD Drive 2: Your `seed.iso` from your datastore
 ![IDE Controller settings](vmware-customize-settings.png)
 * Start the instance
 * Save and run.  You will only have to type `yes` to confirm
